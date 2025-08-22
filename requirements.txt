@@ -1,0 +1,85 @@
+# requirements.txt
+# Compatible with Python 3.13 on Windows
+
+# Core FastAPI and server
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Pydantic - using latest version that should have wheels for Python 3.13
+pydantic
+email-validator
+
+# Snowflake connectors
+snowflake-connector-python
+snowflake-snowpark-python[pandas]
+
+# MongoDB
+pymongo
+dnspython
+
+# Data processing
+pandas
+numpy
+pyarrow
+
+# Environment and configuration
+python-dotenv
+
+# HTTP and networking (these are already dependencies of other packages)
+requests
+urllib3
+certifi
+charset-normalizer
+idna
+
+# Cryptography and security
+cryptography
+cffi
+pyOpenSSL
+asn1crypto
+pyjwt
+
+# Utilities
+click
+pytz
+python-dateutil
+six
+filelock
+sortedcontainers
+platformdirs
+tomlkit
+packaging
+typing-extensions
+
+# Async support
+anyio
+sniffio
+starlette
+
+# Server dependencies
+h11
+httptools
+pyyaml
+watchfiles
+websockets
+
+# JSON handling
+orjson
+
+# Logging
+colorama  # For Windows color support
+
+# COVID-19 Dashboard Dependencies
+
+dash==2.14.1
+plotly==5.17.0
+pandas==2.1.1
+requests
+statsmodels
+dash_bootstrap_components
+scipy
+scikit-learn
+
+#Cache
+threading
