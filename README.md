@@ -61,7 +61,7 @@ cp .env.example .env
 **Edit `.env` with your actual values:**
 ```bash
 # Snowflake (Required)
-SNOWFLAKE_ACCOUNT=mycompany.us-east-1.aws
+SNOWFLAKE_ACCOUNT=APUBLRI-PF13217 #or in a format of locator 
 SNOWFLAKE_USER=john.doe
 SNOWFLAKE_PASSWORD=SecurePassword123
 SNOWFLAKE_ROLE=ACCOUNTADMIN
@@ -74,6 +74,27 @@ MONGODB_DB=COVID_COMMENTS
 # API
 API_HOST=0.0.0.0
 API_PORT=8003
+```
+
+### ⚠️ CRITICAL: Snowflake Shared Database Setup
+
+**🚨 If you're using shared databases from this project, you MUST rename the databases first!**
+
+The shared databases have prefixed names. Run these SQL commands in Snowflake:
+
+```sql
+-- Rename the shared databases to expected names
+ALTER DATABASE SJUBNRL_QX11266_MY_SHARE RENAME TO MY_DB;
+ALTER DATABASE SJUBNRL_QX11266_COVID_ENRICHED_SHARE RENAME TO COVID_ENRICHED;
+
+-- Verify the databases were renamed
+SHOW DATABASES;
+```
+
+**Then update your .env file:**
+```bash
+# In your .env file, you can now use the standard database names:
+SNOWFLAKE_DATABASE=COVID_ENRICHED  # or MY_DB
 ```
 
 ### 3. Run the Application
@@ -141,11 +162,14 @@ COVID-19_Data_Analysis/
 
 ## 🐛 Troubleshooting
 
-**Snowflake Connection Issues:**
-```bash
-# Verify .env format (account should include region.cloud)
-# Example: SNOWFLAKE_ACCOUNT=mycompany.us-east-1.aws
-# Check credentials and warehouse status
+**🚨 Snowflake Shared Database Issues:**
+```sql
+-- Rename shared databases to expected names:
+ALTER DATABASE SJUBNRL_QX11266_MY_SHARE RENAME TO MY_DB;
+ALTER DATABASE SJUBNRL_QX11266_COVID_ENRICHED_SHARE RENAME TO COVID_ENRICHED;
+
+-- Verify databases were renamed:
+SHOW DATABASES;
 ```
 
 **Dashboard Won't Load:**
