@@ -91,11 +91,6 @@ ALTER DATABASE SJUBNRL_QX11266_COVID_ENRICHED_SHARE RENAME TO COVID_ENRICHED;
 SHOW DATABASES;
 ```
 
-**Then update your .env file:**
-```bash
-# In your .env file, you can now use the standard database names:
-SNOWFLAKE_DATABASE=COVID_ENRICHED  # or MY_DB
-```
 
 ### 3. Run the Application
 
@@ -205,3 +200,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ---
 
 **⭐ Star this project if it helped you!**
+
