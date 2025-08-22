@@ -30,15 +30,17 @@ Interactive analytics platform with machine learning-powered forecasting, cluste
 - MongoDB (optional, for comments)
 
 ### 1. Clone & Setup
-```bash
+```cmd
 git clone https://github.com/Borinskii/COVID-19_Data_Analysis.git
 cd COVID-19_Data_Analysis
 
 # Create virtual environment
-python -m venv .venv
 # Windows:
+python -m venv .venv
 .venv\Scripts\activate
+
 # macOS/Linux:
+python3 -m venv .venv
 source .venv/bin/activate
 
 # Install dependencies
@@ -46,9 +48,14 @@ pip install -r requirements.txt
 ```
 
 ### 2. Environment Configuration
-```bash
-# Copy template and edit with your credentials
+```cmd
+# Windows:
+copy .env.example .env
+
+# macOS/Linux:
 cp .env.example .env
+
+# Then edit .env file with your actual credentials
 ```
 
 **Edit `.env` with your actual values:**
